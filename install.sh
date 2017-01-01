@@ -31,7 +31,7 @@ if test ! -d $HOME/.zim; then
 fi
 
 # Link .rc files via stow
-stow zsh
+stow zsh -t $HOME
 
 # Install Solarized theme for iTerm2
 rake install
