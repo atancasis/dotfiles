@@ -32,12 +32,10 @@ fi
 
 # Link .rc files via stow
 stow zsh -t $HOME
+stow neovim -t $HOME
 
 # Install Solarized theme for iTerm2
 rake install
-
-# Install vim-plug
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # Set macOS preferences
 # We will run this last because this will reload the shell
