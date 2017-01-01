@@ -1,0 +1,6 @@
+# Install ZSH
+brew 'zsh'
+brew 'zsh-completions'
+
+# Install zplug
+brew 'zplug'

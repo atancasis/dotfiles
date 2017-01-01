@@ -1,0 +1,6 @@
+# Taps
+tap 'caskroom/cask'
+tap 'caskroom/fonts'
+tap 'caskroom/versions'
+tap 'neovim/neovim'
+tap 'rogual/neovim-dot-app'
