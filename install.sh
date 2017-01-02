@@ -37,6 +37,9 @@ stow neovim -t $HOME
 # Install Solarized theme for iTerm2
 rake install
 
+# Install FZF shell extensions
+/usr/local/opt/fzf/install
+
 # Set macOS preferences
 # We will run this last because this will reload the shell
 source osx/.macos
