@@ -2,3 +2,8 @@
 node = "lts"
 rust = "latest"
 zig = "latest"
+
+# Preferences
+bun = "latest"
+go = "latest"
+python = "latest"

@@ -98,6 +98,21 @@ To pick up later changes, run `chezmoi update`.
 - `make` is GNU Make 4 and `rsync` is rsync 3, in place of macOS's frozen Make
   3.81 and its openrsync.
 
+### Preferences
+
+Things I use but don't need on every machine:
+
+- Containers with colima and Docker.
+- kitty, with a custom app icon, and WezTerm.
+- Hammerspoon sizes Ghostty's font for each display.
+- Go, Python and Bun through mise, with LazyVim's Go and Python extras.
+- jq, yq, xh, jwt-cli, uv, jj, zellij, ffmpeg and Codex through Homebrew.
+- Chrome ignores swipe-to-go-back and prints with the macOS dialog.
+- Firefox, OBS, HandBrake, MacWhisper, The Unarchiver, Mouseless and
+  Amphetamine.
+- `imgsizes` lists the images below the current directory with their file size
+  and pixel dimensions.
+
 ## Credits
 
 The macOS defaults started from Mathias Bynens'

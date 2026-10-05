@@ -25,6 +25,26 @@ zshaddhistory() {
   whence -- "${words[i]}" >/dev/null 2>&1
 }
 
+# Image sizes
+imgsizes() {
+  (
+  echo "FILE SIZE PIXELS"
+  for f in **/*.(png|jpg|jpeg|heic)(N); do
+    dims=$(sips -g pixelWidth -g pixelHeight "$f" 2>/dev/null | awk '/pixel/ {print $2}' | xargs)
+    [[ -n $dims ]] || continue
+    dims="${dims/ /x}"
+    fsize=$(stat -f "%z" "$f" 2>/dev/null)
+    [[ -n $fsize ]] || continue
+    if (( fsize > 1048576 )); then
+      fsize=$(echo "scale=1; $fsize/1048576" | bc)MB
+    else
+      fsize=$(echo "scale=1; $fsize/1024" | bc)KB
+    fi
+    echo "$f $fsize $dims"
+  done
+  ) | column -t
+}
+
 # Back up the history once a day and keep a week of backups. Uses zsh
 # builtins so a new shell doesn't fork when today's backup already exists.
 () {

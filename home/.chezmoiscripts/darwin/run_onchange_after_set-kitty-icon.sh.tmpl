@@ -1,0 +1,13 @@
+#!/bin/bash
+
+# Re-run when the icon changes: {{ include "private_dot_config/kitty/kitty.app.icns" | sha256sum }}
+
+set -euo pipefail
+
+eval "$("{{ includeTemplate "darwin/brew-prefix" . }}/bin/brew" shellenv)"
+
+# kitty applies the icon itself only while it runs. Set it on the app too, and
+# clear the Dock's icon cache, so the Dock shows it before kitty first starts.
+fileicon set /Applications/kitty.app "$HOME/.config/kitty/kitty.app.icns"
+rm -f "$(getconf DARWIN_USER_CACHE_DIR)com.apple.dock.iconcache"
+killall Dock

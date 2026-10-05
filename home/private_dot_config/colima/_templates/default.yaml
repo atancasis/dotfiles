@@ -1,0 +1,9 @@
+# Template for new colima instances. Missing fields don't fall back to colima's
+# defaults: no runtime fails to start, and no cpu picks a different count.
+runtime: docker
+cpu: 2
+memory: 4
+disk: 20
+vmType: vz
+mountType: virtiofs
+nestedVirtualization: true

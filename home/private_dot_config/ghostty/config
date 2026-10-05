@@ -1,6 +1,8 @@
 # Font
 font-family = "FiraCode Nerd Font Mono"
 font-size = 10.0
+# Per-display size from Hammerspoon, if present
+config-file = ?font-size
 font-thicken = true
 font-thicken-strength = 200
 font-feature = calt

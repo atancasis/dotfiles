@@ -88,6 +88,21 @@ defaults write com.apple.dock autohide -bool true
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
 ###############################################################################
+# Google Chrome & Google Chrome Canary                                        #
+###############################################################################
+
+# Changed: Google Chrome only.
+
+# Disable the all too sensitive backswipe on trackpads
+defaults write com.google.Chrome AppleEnableSwipeNavigateWithScrolls -bool false
+
+# Disable the all too sensitive backswipe on Magic Mouse
+defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool false
+
+# Use the system-native print preview dialog
+defaults write com.google.Chrome DisablePrintPreview -bool true
+
+###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################
 

@@ -1,3 +1,5 @@
+{{- $taps := list -}}
+
 {{- $brews := list
   "bat"
   "btop"
@@ -34,10 +36,59 @@
   "jordanbaird-ice"
 -}}
 
+{{- $mas := dict -}}
+
+{{- $services := list -}}
+
+{{- /* Preferences */ -}}
+{{- $brews = concat $brews (list
+      "colima"
+      "docker"
+      "docker-buildx"
+      "docker-compose"
+      "ffmpeg"
+      "fileicon"
+      "jj"
+      "jq"
+      "jwt-cli"
+      "mas"
+      "uv"
+      "xh"
+      "yq"
+      "zellij"
+    ) -}}
+{{- $casks = concat $casks (list
+      "codex"
+      "firefox"
+      "google-chrome"
+      "hammerspoon"
+      "handbrake"
+      "kitty"
+      "macwhisper"
+      "mouseless"
+      "obs"
+      "the-unarchiver"
+      "wezterm"
+    ) -}}
+{{- $_ := set $mas "Amphetamine" 937984704 -}}
+{{- /* End preferences */ -}}
+
+{{- range ($taps | sortAlpha | uniq) }}
+tap "{{ . }}"
+{{- end }}
+
 {{- range ($brews | sortAlpha | uniq) }}
+{{-   if has . $services }}
+brew "{{ . }}", start_service: true
+{{-   else }}
 brew "{{ . }}"
+{{-   end }}
 {{- end }}
 
 {{- range ($casks | sortAlpha | uniq) }}
 cask "{{ . }}"
+{{- end }}
+
+{{- range $name, $id := $mas }}
+mas "{{ $name }}", id: {{ $id }}
 {{- end }}
