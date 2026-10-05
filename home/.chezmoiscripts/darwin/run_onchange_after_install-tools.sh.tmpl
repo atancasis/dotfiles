@@ -1,0 +1,8 @@
+#!/bin/bash
+
+# Re-run when the tool list changes: {{ include "private_dot_config/mise/config.toml" | sha256sum }}
+
+set -euo pipefail
+
+eval "$("{{ includeTemplate "darwin/brew-prefix" . }}/bin/brew" shellenv)"
+mise install

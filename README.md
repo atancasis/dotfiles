@@ -49,6 +49,18 @@ To pick up later changes, run `chezmoi update`.
   nothing at idle.
 - Unfocused splits show a thin bar cursor instead of Ghostty's hollow box.
 
+### Editor
+
+[LazyVim](https://www.lazyvim.org) on Neovim:
+
+- Kanagawa with a transparent background, matching the terminal.
+- Only yanks reach the macOS clipboard; deletes and changes stay in Neovim.
+- Language support and other extras are listed in `lazyvim.json`.
+- [Claude Code](https://claude.com/claude-code) runs inside Neovim through the
+  claudecode extra.
+- Plugin versions are pinned in `lazy-lock.json`, which is symlinked into this
+  repo, so `:Lazy update` shows up as a git diff to review and commit.
+
 ### Git
 
 - Commits are GPG-signed, with pinentry-mac asking for the passphrase.
@@ -78,9 +90,11 @@ To pick up later changes, run `chezmoi update`.
 
 ### Tools
 
-- Homebrew: bat, btop, chezmoi, coreutils, direnv, git, glow, gnupg, ifstat,
-  make, mise, Neovim, nmap, pinentry-mac, rsync, sops, telnet, tree, watch,
-  websocat, wget and zoxide.
+- Homebrew: bat, btop, chezmoi, coreutils, direnv, fd, git, glow, gnupg, ifstat,
+  lazygit, make, mise, Neovim, nmap, pinentry-mac, ripgrep, rsync, sops, telnet,
+  tree, tree-sitter-cli, watch, websocat, wget and zoxide.
+- mise: Node LTS, which LazyVim's language servers need, and Rust and Zig for
+  their extras.
 - `make` is GNU Make 4 and `rsync` is rsync 3, in place of macOS's frozen Make
   3.81 and its openrsync.
 
