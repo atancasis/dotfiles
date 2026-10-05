@@ -1,0 +1,4 @@
+{{ if ne .chezmoi.os "darwin" }}
+.chezmoiscripts/darwin/**
+.gnupg/gpg-agent.conf
+{{ end }}

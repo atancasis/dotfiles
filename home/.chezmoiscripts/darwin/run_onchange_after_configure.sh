@@ -1,0 +1,104 @@
+#!/bin/bash
+
+# ~/.macos — https://mths.be/macos
+#
+# Added: comments from the original are kept as written. Anything added or
+# changed is marked "Added:" or "Changed:", and checked against
+# https://macos-defaults.com.
+
+# Added: stop at the first failing command.
+set -euo pipefail
+
+# Close any open System Preferences panes, to prevent them from overriding
+# settings we’re about to change
+# Changed: System Preferences is called System Settings since macOS 13.
+osascript -e 'tell application "System Settings" to quit'
+
+###############################################################################
+# General UI/UX                                                               #
+###############################################################################
+
+# Disable automatic capitalization as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticCapitalizationEnabled -bool false
+
+# Disable smart dashes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+
+# Disable automatic period substitution as it’s annoying when typing code
+defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
+
+# Disable smart quotes as they’re annoying when typing code
+defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+
+# Disable auto-correct
+defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+
+###############################################################################
+# Menu bar                                                                    #
+###############################################################################
+
+# Added: show seconds in the menu bar clock.
+defaults write com.apple.menuextra.clock ShowSeconds -bool true
+
+###############################################################################
+# Trackpad, mouse, keyboard, Bluetooth accessories, and input                 #
+###############################################################################
+
+# Trackpad: enable tap to click for this user and for the login screen
+# Changed: also the built-in trackpad, which reads its own domain. These lines
+# only cover this user; the login screen needs sudo and /Library/Preferences.
+# Takes effect after logging out.
+defaults write com.apple.AppleMultitouchTrackpad Clicking -bool true
+defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true
+defaults -currentHost write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+defaults write NSGlobalDomain com.apple.mouse.tapBehavior -int 1
+
+# Disable press-and-hold for keys in favor of key repeat
+defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+
+# Set a blazingly fast keyboard repeat rate
+defaults write NSGlobalDomain KeyRepeat -int 1
+defaults write NSGlobalDomain InitialKeyRepeat -int 10
+
+###############################################################################
+# Finder                                                                      #
+###############################################################################
+
+# Avoid creating .DS_Store files on network or USB volumes
+defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
+
+###############################################################################
+# Dock, Dashboard, and hot corners                                            #
+###############################################################################
+
+# Remove the auto-hiding Dock delay
+defaults write com.apple.dock autohide-delay -float 0
+# Remove the animation when hiding/showing the Dock
+defaults write com.apple.dock autohide-time-modifier -float 0
+
+# Automatically hide and show the Dock
+defaults write com.apple.dock autohide -bool true
+
+###############################################################################
+# Time Machine                                                                #
+###############################################################################
+
+# Prevent Time Machine from prompting to use new hard drives as backup volume
+defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+###############################################################################
+# Kill affected applications                                                  #
+###############################################################################
+
+# Changed: only the processes these settings need; other apps read their
+# settings when they next start. A process that isn't running is skipped.
+# ControlCenter draws the menu bar clock.
+for app in "cfprefsd" \
+	"ControlCenter" \
+	"Dock" \
+	"Finder" \
+	"SystemUIServer"; do
+	killall "${app}" &> /dev/null || true
+done
+echo "Done. Note that some of these changes require a logout/restart to take effect."

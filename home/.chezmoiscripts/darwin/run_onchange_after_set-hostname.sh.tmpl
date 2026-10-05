@@ -1,0 +1,20 @@
+#!/bin/bash
+
+set -euo pipefail
+
+# An empty hostname leaves the names alone.
+hostname={{ .hostname | quote }}
+if [[ -z $hostname ]]; then
+  exit 0
+fi
+# One DNS label: letters, digits and inner hyphens, at most 63 characters.
+if [[ ! $hostname =~ ^[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?$ ]]; then
+  echo "Invalid hostname '$hostname': use up to 63 letters, digits and hyphens, not starting or ending with a hyphen." >&2
+  exit 1
+fi
+
+for name in ComputerName LocalHostName HostName; do
+  if [[ $(scutil --get "$name" 2>/dev/null || true) != "$hostname" ]]; then
+    sudo scutil --set "$name" "$hostname"
+  fi
+done

@@ -1,0 +1,36 @@
+# Font
+font-family = "FiraCode Nerd Font Mono"
+font-size = 10.0
+font-thicken = true
+font-thicken-strength = 200
+font-feature = calt
+font-feature = liga
+adjust-cell-width = -10%
+adjust-cell-height = +5%
+
+# Theme & appearance
+theme = kanagawabones
+window-colorspace = display-p3
+window-padding-color = extend
+
+# macOS integration
+macos-option-as-alt = true
+window-subtitle = working-directory
+
+# Shaders
+# Single combined shader (smear trail + blaze glow in one pass)
+custom-shader = shaders/cursor_trail.glsl
+custom-shader-animation = false
+
+# Window behavior
+maximize = true
+mouse-hide-while-typing = true
+window-save-state = always
+scrollback-limit = 52428800
+quit-after-last-window-closed = true
+
+# Selection & clipboard
+copy-on-select = false
+
+# Cursor
+cursor-style-blink = false

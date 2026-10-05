@@ -1,0 +1,13 @@
+#!/bin/bash
+
+set -euo pipefail
+
+brew="{{ includeTemplate "darwin/brew-prefix" . }}/bin/brew"
+if [[ ! -x $brew ]]; then
+  /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+fi
+eval "$("$brew" shellenv)"
+
+HOMEBREW_NO_ENV_HINTS=1 brew bundle --verbose --file=/dev/stdin <<'BREWFILE'
+{{ includeTemplate "darwin/brewfile" . | trim }}
+BREWFILE

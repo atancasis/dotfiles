@@ -1,0 +1,38 @@
+{{- $brews := list
+  "bat"
+  "btop"
+  "chezmoi"
+  "coreutils"
+  "direnv"
+  "git"
+  "glow"
+  "gnupg"
+  "ifstat"
+  "make"
+  "mise"
+  "neovim"
+  "nmap"
+  "pinentry-mac"
+  "rsync"
+  "sops"
+  "telnet"
+  "tree"
+  "watch"
+  "websocat"
+  "wget"
+  "zoxide"
+-}}
+
+{{- $casks := list
+  "font-fira-code-nerd-font"
+  "ghostty"
+  "jordanbaird-ice"
+-}}
+
+{{- range ($brews | sortAlpha | uniq) }}
+brew "{{ . }}"
+{{- end }}
+
+{{- range ($casks | sortAlpha | uniq) }}
+cask "{{ . }}"
+{{- end }}

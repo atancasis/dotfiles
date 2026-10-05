@@ -1,0 +1,26 @@
+{{- /* Every `chezmoi init` asks again, defaulting to the current value. An empty
+       answer always means "keep the default", so "none" turns the hostname or
+       signing key off; it is stored as an empty string. */ -}}
+{{- $name := get . "name" | default "Arnold Tan Casis" -}}
+{{- $email := get . "email" | default "atancasis@gmail.com" -}}
+{{- $hostname := "yggdrasil" -}}
+{{- if hasKey . "hostname" -}}
+{{-   $hostname = get . "hostname" -}}
+{{- end -}}
+{{- $signingKey := "E0FB94BF79183EDC" -}}
+{{- if hasKey . "signingKey" -}}
+{{-   $signingKey = get . "signingKey" -}}
+{{- end -}}
+
+{{- $name = promptString "Name" $name -}}
+{{- $email = promptString "Email" $email -}}
+{{- $hostname = promptString "Hostname, or none to leave it unchanged" ($hostname | default "none") -}}
+{{- if eq $hostname "none" }}{{ $hostname = "" }}{{ end -}}
+{{- $signingKey = promptString "GPG signing key, or none for unsigned commits" ($signingKey | default "none") -}}
+{{- if eq $signingKey "none" }}{{ $signingKey = "" }}{{ end -}}
+
+data:
+  name: {{ $name | quote }}
+  email: {{ $email | quote }}
+  hostname: {{ $hostname | quote }}
+  signingKey: {{ $signingKey | quote }}

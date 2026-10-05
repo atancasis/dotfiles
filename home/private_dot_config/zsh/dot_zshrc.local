@@ -1,0 +1,37 @@
+# GNU make 4 as `make`; Homebrew installs it as `gmake`.
+[[ -d $HOMEBREW_PREFIX/opt/make/libexec/gnubin ]] && path=($HOMEBREW_PREFIX/opt/make/libexec/gnubin $path)
+
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+# less stays the pager; bat only renders man pages. col -bx strips the
+# overstrike formatting from macOS man, which bat would otherwise print.
+export MANPAGER="sh -c 'col -bx | bat -l man -p'"
+
+# zsh4humans already keeps unlimited, shared history. These add to it.
+setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
+setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.
+
+# Skip history entries where the first word is not a known command (catches typos)
+zshaddhistory() {
+  emulate -L zsh
+  setopt extendedglob
+  local -a words=( ${(z)1} )
+  local i=1
+  while (( i <= $#words )) && [[ ${words[i]} == [A-Za-z_][A-Za-z0-9_]#=* ]]; do
+    (( i++ ))
+  done
+  (( i > $#words )) && return 0
+  whence -- "${words[i]}" >/dev/null 2>&1
+}
+
+# Back up the history once a day and keep a week of backups. Uses zsh
+# builtins so a new shell doesn't fork when today's backup already exists.
+() {
+  zmodload -F zsh/datetime b:strftime p:EPOCHSECONDS
+  local dir=${HISTFILE:h}/backups today
+  strftime -s today %Y-%m-%d $EPOCHSECONDS
+  [[ -f $dir/zsh_history.$today ]] && return
+  mkdir -p -- $dir && cp -- $HISTFILE $dir/zsh_history.$today 2>/dev/null
+  rm -f -- $dir/zsh_history.*(N.m+7)
+}

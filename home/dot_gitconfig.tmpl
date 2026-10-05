@@ -1,0 +1,28 @@
+[user]
+	name = {{ .name }}
+	email = {{ .email }}
+{{- if .signingKey }}
+	signingkey = {{ .signingKey }}
+[commit]
+	gpgsign = true
+{{- end }}
+[init]
+	defaultBranch = main
+[alias]
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit --date=relative
+[pull]
+	rebase = true
+[rebase]
+	autoStash = true
+[push]
+	autoSetupRemote = true
+[fetch]
+	prune = true
+[diff]
+	algorithm = histogram
+[merge]
+	conflictStyle = zdiff3
+[rerere]
+	enabled = true
+[branch]
+	sort = -committerdate
