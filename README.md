@@ -16,11 +16,13 @@ From an existing clone:
 ./install.sh
 ```
 
-The install asks for a name, email, hostname and GPG signing key. Press Return
-to keep the suggested answer. Run `chezmoi init` later to change them, or add
-`--promptDefaults` to the install command to skip the questions.
+The install asks for a name, email, hostname and GPG signing key, and whether
+to install the extras. Press Return to keep the suggested answer. Run
+`chezmoi init` later to change them, or add `--promptDefaults` to the install
+command to skip the questions.
 
-To pick up later changes, run `chezmoi update`.
+To pick up later changes, run `chezmoi update`. If it says the config file
+template has changed, run `chezmoi init` first.
 
 ## What's included
 
@@ -39,6 +41,8 @@ To pick up later changes, run `chezmoi update`.
 - Man pages render with [bat](https://github.com/sharkdp/bat).
 - [mise](https://mise.jdx.dev) is active, so a project's `.mise.toml` pins its
   tool versions.
+- `imgsizes` lists the images below the current directory with their file size
+  and pixel dimensions.
 
 ### Terminal
 
@@ -55,11 +59,14 @@ To pick up later changes, run `chezmoi update`.
 
 - Kanagawa with a transparent background, matching the terminal.
 - Only yanks reach the macOS clipboard; deletes and changes stay in Neovim.
-- Language support and other extras are listed in `lazyvim.json`.
+- Language support and other extras are listed in `lazyvim.json`, except those
+  that need a package set's runtimes, which `lua/config/lazy.lua` imports only
+  with that set.
 - [Claude Code](https://claude.com/claude-code) runs inside Neovim through the
   claudecode extra.
 - Plugin versions are pinned in `lazy-lock.json`, which is symlinked into this
-  repo, so `:Lazy update` shows up as a git diff to review and commit.
+  repo, so `:Lazy update` shows up as a git diff to review and commit. Run it on
+  a machine with every package set, or the lock drops the plugins it lacks.
 
 ### Git
 
@@ -98,9 +105,9 @@ To pick up later changes, run `chezmoi update`.
 - `make` is GNU Make 4 and `rsync` is rsync 3, in place of macOS's frozen Make
   3.81 and its openrsync.
 
-### Preferences
+### Extras
 
-Things I use but don't need on every machine:
+Dev tools, containers and desktop apps, installed unless you answer no:
 
 - Containers with colima and Docker.
 - kitty, with a custom app icon, and WezTerm.
@@ -110,8 +117,6 @@ Things I use but don't need on every machine:
 - Chrome ignores swipe-to-go-back and prints with the macOS dialog.
 - Firefox, OBS, HandBrake, MacWhisper, The Unarchiver, Mouseless and
   Amphetamine.
-- `imgsizes` lists the images below the current directory with their file size
-  and pixel dimensions.
 
 ## Credits
 

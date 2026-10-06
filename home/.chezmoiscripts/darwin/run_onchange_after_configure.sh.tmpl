@@ -87,6 +87,7 @@ defaults write com.apple.dock autohide -bool true
 # Prevent Time Machine from prompting to use new hard drives as backup volume
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
 
+{{ if .extras -}}
 ###############################################################################
 # Google Chrome & Google Chrome Canary                                        #
 ###############################################################################
@@ -102,6 +103,7 @@ defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool 
 # Use the system-native print preview dialog
 defaults write com.google.Chrome DisablePrintPreview -bool true
 
+{{ end -}}
 ###############################################################################
 # Kill affected applications                                                  #
 ###############################################################################

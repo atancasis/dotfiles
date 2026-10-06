@@ -2,3 +2,10 @@
 .chezmoiscripts/darwin/**
 .gnupg/gpg-agent.conf
 {{ end }}
+{{ if not .extras }}
+.chezmoiscripts/darwin/set-kitty-icon.sh
+.config/colima
+.config/kitty
+.config/wezterm
+.hammerspoon
+{{ end }}

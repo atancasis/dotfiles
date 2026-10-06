@@ -11,6 +11,10 @@
 {{- if hasKey . "signingKey" -}}
 {{-   $signingKey = get . "signingKey" -}}
 {{- end -}}
+{{- $extras := true -}}
+{{- if hasKey . "extras" -}}
+{{-   $extras = get . "extras" -}}
+{{- end -}}
 
 {{- $name = promptString "Name" $name -}}
 {{- $email = promptString "Email" $email -}}
@@ -19,8 +23,10 @@
 {{- $signingKey = promptString "GPG signing key, or none for unsigned commits" ($signingKey | default "none") -}}
 {{- if eq $signingKey "none" }}{{ $signingKey = "" }}{{ end -}}
 
+{{- $extras = promptBool "Install extras (dev tools, containers, desktop apps)" $extras -}}
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
   hostname: {{ $hostname | quote }}
   signingKey: {{ $signingKey | quote }}
+  extras: {{ $extras }}

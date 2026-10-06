@@ -2,8 +2,10 @@
 node = "lts"
 rust = "latest"
 zig = "latest"
+{{- if .extras }}
 
-# Preferences
+# Extras
 bun = "latest"
 go = "latest"
 python = "latest"
+{{- end }}

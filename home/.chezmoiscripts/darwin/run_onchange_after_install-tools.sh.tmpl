@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# Re-run when the tool list changes: {{ include "private_dot_config/mise/config.toml" | sha256sum }}
+# Re-run when the tool list or the chosen sets change: {{ include "private_dot_config/mise/config.toml.tmpl" | sha256sum }} {{ .extras }}
 
 set -euo pipefail
 
