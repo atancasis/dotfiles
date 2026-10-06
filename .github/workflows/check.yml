@@ -17,9 +17,11 @@ jobs:
           - extras: false
             work: false
             workEmail: ""
+            personal: false
           - extras: true
             work: true
             workEmail: ci@example.com
+            personal: true
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install tools
@@ -42,6 +44,7 @@ jobs:
             extras: ${{ matrix.extras }}
             work: ${{ matrix.work }}
             workEmail: "${{ matrix.workEmail }}"
+            personal: ${{ matrix.personal }}
           warnings:
             configFileTemplateHasChanged: false
           CONFIG

@@ -98,6 +98,22 @@
       ) -}}
 {{- end }}
 
+{{- if .personal }}
+{{-   $casks = concat $casks (list
+        "calibre"
+        "cryptomator"
+        "iina"
+        "keepassxc"
+        "nordvpn"
+        "plex-media-server"
+        "spotify"
+        "telegram"
+        "transmission"
+        "viber"
+        "whatsapp"
+      ) -}}
+{{- end }}
+
 {{- /* Homebrew 7 only installs from third-party taps you trust. */ -}}
 {{- range ($taps | sortAlpha | uniq) }}
 tap "{{ . }}", trusted: true

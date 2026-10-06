@@ -135,6 +135,14 @@ Kubernetes, cloud, Java and VPN tools, installed if you answer yes:
 - pgcli and mycli.
 - 1Password and OpenVPN Connect.
 
+### Personal apps
+
+Media, messaging and VPN apps, installed unless you answer no:
+
+- Calibre, Cryptomator, KeePassXC and NordVPN.
+- IINA, Plex Media Server, Spotify and Transmission.
+- Telegram, Viber and WhatsApp.
+
 ## Credits
 
 The macOS defaults started from Mathias Bynens'
