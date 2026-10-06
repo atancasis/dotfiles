@@ -1,0 +1,8 @@
+k9s:
+  ui:
+    logoless: true
+    splashless: true
+    skin: catppuccin-mocha
+  logger:
+    tail: 10000
+    buffer: 500000

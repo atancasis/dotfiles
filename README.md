@@ -133,6 +133,10 @@ Kubernetes, cloud, Java and VPN tools, installed if you answer yes:
 - The GitHub and GitLab CLIs.
 - Kubernetes tools: kubectl with kubecolor, kind, k9s, sofka, kubectx, stern and
   popeye.
+- k9s starts without its logo or splash screen, uses the Catppuccin Mocha skin,
+  opens logs at their last 10,000 lines, and has short aliases such as `dp` for
+  deployments.
+- sofka starts in compact mode.
 - Terraform, Terragrunt, Helm, gcloud and Vault through mise, with LazyVim's
   Terraform extra.
 - Ansible, Trivy and sshuttle.

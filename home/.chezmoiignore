@@ -12,7 +12,9 @@
 .hammerspoon
 {{ end }}
 {{ if not .work }}
+.config/k9s
 .config/nvim/lua/plugins/test.lua
+.config/sofka
 {{ end }}
 {{ if not .workEmail }}
 .config/git/personal
