@@ -5,8 +5,10 @@
 {{ if not .extras }}
 .chezmoiscripts/darwin/set-kitty-icon.sh
 .config/colima
+.config/jj
 .config/kitty
 .config/wezterm
+.config/zellij
 .hammerspoon
 {{ end }}
 {{ if not .work }}

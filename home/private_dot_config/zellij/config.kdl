@@ -1,0 +1,9 @@
+// In scroll mode, moving focus with Alt also leaves scroll mode.
+keybinds {
+    scroll {
+        bind "Alt left" "Alt h" { MoveFocusOrTab "left"; SwitchToMode "normal"; }
+        bind "Alt down" "Alt j" { MoveFocus "down"; SwitchToMode "normal"; }
+        bind "Alt up" "Alt k" { MoveFocus "up"; SwitchToMode "normal"; }
+        bind "Alt right" "Alt l" { MoveFocusOrTab "right"; SwitchToMode "normal"; }
+    }
+}

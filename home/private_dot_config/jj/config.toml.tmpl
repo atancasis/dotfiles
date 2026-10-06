@@ -1,0 +1,11 @@
+[user]
+name = {{ .name | quote }}
+email = {{ .workEmail | default .email | quote }}
+{{- if .workEmail }}
+
+# This repo keeps the personal email, as in ~/.gitconfig.
+[[--scope]]
+--when.repositories = [{{ .chezmoi.workingTree | quote }}]
+[--scope.user]
+email = {{ .email | quote }}
+{{- end }}
