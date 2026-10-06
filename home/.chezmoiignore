@@ -9,3 +9,9 @@
 .config/wezterm
 .hammerspoon
 {{ end }}
+{{ if not .work }}
+.config/nvim/lua/plugins/test.lua
+{{ end }}
+{{ if not .workEmail }}
+.config/git/personal
+{{ end }}

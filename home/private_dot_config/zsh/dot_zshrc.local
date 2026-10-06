@@ -8,6 +8,8 @@ export VISUAL="nvim"
 # overstrike formatting from macOS man, which bat would otherwise print.
 export MANPAGER="sh -c 'col -bx | bat -l man -p'"
 
+(( $+commands[kubecolor] )) && alias kubectl="kubecolor"
+
 # zsh4humans already keeps unlimited, shared history. These add to it.
 setopt HIST_IGNORE_ALL_DUPS      # Delete old recorded entry if new entry is a duplicate.
 setopt HIST_REDUCE_BLANKS        # Remove superfluous blanks before recording entry.

@@ -15,7 +15,11 @@ jobs:
         include:
           # The base alone, and the base with every package set.
           - extras: false
+            work: false
+            workEmail: ""
           - extras: true
+            work: true
+            workEmail: ci@example.com
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
       - name: Install tools
@@ -36,6 +40,8 @@ jobs:
             signingKey: ""
             hostname: ci-mac
             extras: ${{ matrix.extras }}
+            work: ${{ matrix.work }}
+            workEmail: "${{ matrix.workEmail }}"
           warnings:
             configFileTemplateHasChanged: false
           CONFIG

@@ -1,6 +1,6 @@
 [user]
 	name = {{ .name }}
-	email = {{ .email }}
+	email = {{ .workEmail | default .email }}
 {{- if .signingKey }}
 	signingkey = {{ .signingKey }}
 [commit]
@@ -26,3 +26,7 @@
 	enabled = true
 [branch]
 	sort = -committerdate
+{{- if .workEmail }}
+[includeIf "gitdir:{{ .chezmoi.workingTree }}/"]
+	path = ~/.config/git/personal
+{{- end }}

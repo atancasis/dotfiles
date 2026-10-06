@@ -71,8 +71,36 @@
 {{-   $_ := set $mas "Amphetamine" 937984704 -}}
 {{- end }}
 
+{{- if .work }}
+{{-   $taps = concat $taps (list
+        "nklmilojevic/sofka"
+      ) -}}
+{{-   $brews = concat $brews (list
+        "ansible"
+        "gh"
+        "glab"
+        "k9s"
+        "kind"
+        "kubecolor"
+        "kubectl"
+        "kubectx"
+        "mycli"
+        "pgcli"
+        "popeye"
+        "sofka"
+        "sshuttle"
+        "stern"
+        "trivy"
+      ) -}}
+{{-   $casks = concat $casks (list
+        "1password"
+        "openvpn-connect"
+      ) -}}
+{{- end }}
+
+{{- /* Homebrew 7 only installs from third-party taps you trust. */ -}}
 {{- range ($taps | sortAlpha | uniq) }}
-tap "{{ . }}"
+tap "{{ . }}", trusted: true
 {{- end }}
 
 {{- range ($brews | sortAlpha | uniq) }}

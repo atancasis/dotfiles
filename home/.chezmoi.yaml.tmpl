@@ -1,6 +1,6 @@
 {{- /* Every `chezmoi init` asks again, defaulting to the current value. An empty
-       answer always means "keep the default", so "none" turns the hostname or
-       signing key off; it is stored as an empty string. */ -}}
+       answer always means "keep the default", so "none" turns the hostname,
+       signing key or work email off; it is stored as an empty string. */ -}}
 {{- $name := get . "name" | default "Arnold Tan Casis" -}}
 {{- $email := get . "email" | default "atancasis@gmail.com" -}}
 {{- $hostname := "yggdrasil" -}}
@@ -15,6 +15,11 @@
 {{- if hasKey . "extras" -}}
 {{-   $extras = get . "extras" -}}
 {{- end -}}
+{{- $workEmail := get . "workEmail" | default "" -}}
+{{- $work := ne $workEmail "" -}}
+{{- if hasKey . "work" -}}
+{{-   $work = get . "work" -}}
+{{- end -}}
 
 {{- $name = promptString "Name" $name -}}
 {{- $email = promptString "Email" $email -}}
@@ -24,9 +29,18 @@
 {{- if eq $signingKey "none" }}{{ $signingKey = "" }}{{ end -}}
 
 {{- $extras = promptBool "Install extras (dev tools, containers, desktop apps)" $extras -}}
+{{- $work = promptBool "Install work tools (Kubernetes, cloud, Java, VPN)" $work -}}
+{{- if $work -}}
+{{-   $workEmail = promptString "Work email, or none" ($workEmail | default "none") -}}
+{{-   if eq $workEmail "none" }}{{ $workEmail = "" }}{{ end -}}
+{{- else -}}
+{{-   $workEmail = "" -}}
+{{- end -}}
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}
   hostname: {{ $hostname | quote }}
   signingKey: {{ $signingKey | quote }}
   extras: {{ $extras }}
+  work: {{ $work }}
+  workEmail: {{ $workEmail | quote }}

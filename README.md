@@ -16,8 +16,8 @@ From an existing clone:
 ./install.sh
 ```
 
-The install asks for a name, email, hostname and GPG signing key, and whether
-to install the extras. Press Return to keep the suggested answer. Run
+The install asks for a name, email, hostname and GPG signing key, and which
+package sets to install. Press Return to keep the suggested answer. Run
 `chezmoi init` later to change them, or add `--promptDefaults` to the install
 command to skip the questions.
 
@@ -117,6 +117,23 @@ Dev tools, containers and desktop apps, installed unless you answer no:
 - Chrome ignores swipe-to-go-back and prints with the macOS dialog.
 - Firefox, OBS, HandBrake, MacWhisper, The Unarchiver, Mouseless and
   Amphetamine.
+
+### Work tools
+
+Kubernetes, cloud, Java and VPN tools, installed if you answer yes:
+
+- Git uses the work email, if you give one, everywhere except in this repo,
+  which keeps the personal one.
+- The GitHub and GitLab CLIs.
+- Kubernetes tools: kubectl with kubecolor, kind, k9s, sofka, kubectx, stern and
+  popeye.
+- Terraform, Terragrunt, Helm, gcloud and Vault through mise, with LazyVim's
+  Terraform extra.
+- Ansible, Trivy and sshuttle.
+- Java (Temurin 25) and Maven through mise, with LazyVim's Java extra.
+- pnpm through mise, and Vitest and Playwright tests run from Neovim.
+- pgcli and mycli.
+- 1Password and OpenVPN Connect.
 
 ## Credits
 
