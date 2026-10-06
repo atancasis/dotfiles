@@ -91,7 +91,10 @@ template has changed, run `chezmoi init` first.
 - Key repeat is faster than System Settings allows, with no accent menu.
 - No auto-capitalisation, smart dashes, smart quotes, double-space periods or
   autocorrect.
-- The Dock hides with no delay or animation.
+- GarageBand and its sound library, iMovie, Keynote, Numbers and Pages are
+  removed. All are free in the App Store, and stay if you reinstall them.
+- The Dock starts empty, shows no suggested or recent apps, and hides with no
+  delay or animation.
 - Finder writes no `.DS_Store` files to network or USB volumes.
 - Time Machine doesn't offer new drives as backup disks.
 

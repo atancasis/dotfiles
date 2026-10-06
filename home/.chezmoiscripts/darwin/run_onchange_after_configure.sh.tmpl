@@ -72,6 +72,14 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true
 # Dock, Dashboard, and hot corners                                            #
 ###############################################################################
 
+# Wipe all (default) app icons from the Dock
+# This is only really useful when setting up a new Mac, or if you don’t use
+# the Dock to launch apps.
+# Changed: enabled. It runs again whenever this script changes.
+defaults write com.apple.dock persistent-apps -array
+# Added: the Downloads folder on the right side of the Dock too.
+defaults write com.apple.dock persistent-others -array
+
 # Remove the auto-hiding Dock delay
 defaults write com.apple.dock autohide-delay -float 0
 # Remove the animation when hiding/showing the Dock
@@ -79,6 +87,9 @@ defaults write com.apple.dock autohide-time-modifier -float 0
 
 # Automatically hide and show the Dock
 defaults write com.apple.dock autohide -bool true
+
+# Don’t show recent applications in Dock
+defaults write com.apple.dock show-recents -bool false
 
 ###############################################################################
 # Time Machine                                                                #
