@@ -104,6 +104,9 @@ template has changed, run `chezmoi init` first.
   their extras.
 - `make` is GNU Make 4 and `rsync` is rsync 3, in place of macOS's frozen Make
   3.81 and its openrsync.
+- btop sorts processes by PID.
+- bat uses the 1337 theme, with no decorations or line wrapping.
+- glow shows rendered Markdown in a pager.
 
 ### Extras
 
