@@ -79,6 +79,7 @@ template has changed, run `chezmoi init` first.
   (zdiff3).
 - Conflict resolutions are recorded and reused (rerere).
 - `git branch` lists the most recently committed branches first.
+- A mistyped git command offers the closest match and asks before running it.
 - `.DS_Store` is ignored in every repository.
 - Pushes to GitHub go over SSH, even from repos cloned over HTTPS.
 
