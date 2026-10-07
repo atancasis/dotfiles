@@ -3,6 +3,7 @@
 .gnupg/gpg-agent.conf
 {{ end }}
 {{ if not .extras }}
+.chezmoiscripts/darwin/add-login-items.sh
 .chezmoiscripts/darwin/set-kitty-icon.sh
 .config/colima
 .config/jj
