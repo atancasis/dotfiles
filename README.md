@@ -80,6 +80,7 @@ template has changed, run `chezmoi init` first.
 - Conflict resolutions are recorded and reused (rerere).
 - `git branch` lists the most recently committed branches first.
 - `.DS_Store` is ignored in every repository.
+- Pushes to GitHub go over SSH, even from repos cloned over HTTPS.
 
 ### macOS
 

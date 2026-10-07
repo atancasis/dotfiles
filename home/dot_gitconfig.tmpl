@@ -26,6 +26,8 @@
 	enabled = true
 [branch]
 	sort = -committerdate
+[url "git@github.com:"]
+	pushInsteadOf = https://github.com/
 {{- if .workEmail }}
 [includeIf "gitdir:{{ .chezmoi.workingTree }}/"]
 	path = ~/.config/git/personal
