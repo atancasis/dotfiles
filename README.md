@@ -99,6 +99,7 @@ template has changed, run `chezmoi init` first.
 - The Dock starts empty, shows no suggested or recent apps, and hides with no
   delay or animation.
 - Finder writes no `.DS_Store` files to network or USB volumes.
+- Finder opens folders in list view.
 - Time Machine doesn't offer new drives as backup disks.
 
 ### Tools
