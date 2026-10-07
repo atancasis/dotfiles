@@ -84,8 +84,8 @@ template has changed, run `chezmoi init` first.
 
 ### macOS
 
-- The chosen hostname is applied to ComputerName, LocalHostName and HostName.
-  Answering `none` leaves them alone.
+- The chosen hostname is applied to ComputerName, LocalHostName and HostName on
+  every apply, undoing macOS's `-2` renames. Answering `none` leaves them alone.
 - [Thaw](https://github.com/thaw-app/Thaw) manages the menu bar.
 - [Raycast](https://www.raycast.com) opens apps, since the Dock starts empty.
 - The menu bar clock shows seconds.

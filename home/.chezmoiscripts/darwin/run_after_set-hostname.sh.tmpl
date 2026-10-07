@@ -13,6 +13,8 @@ if [[ ! $hostname =~ ^[A-Za-z0-9]([A-Za-z0-9-]{0,61}[A-Za-z0-9])?$ ]]; then
   exit 1
 fi
 
+# Runs on every apply: macOS renames the Mac "name-2" after a name clash on the
+# network, and this puts the chosen name back.
 for name in ComputerName LocalHostName HostName; do
   if [[ $(scutil --get "$name" 2>/dev/null || true) != "$hostname" ]]; then
     sudo scutil --set "$name" "$hostname"
