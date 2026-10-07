@@ -86,7 +86,7 @@ template has changed, run `chezmoi init` first.
 
 - The chosen hostname is applied to ComputerName, LocalHostName and HostName.
   Answering `none` leaves them alone.
-- [Ice](https://icemenubar.app) manages the menu bar.
+- [Thaw](https://github.com/thaw-app/Thaw) manages the menu bar.
 - [Raycast](https://www.raycast.com) opens apps, since the Dock starts empty.
 - The menu bar clock shows seconds.
 - Tap to click works on both the built-in and Bluetooth trackpads.
