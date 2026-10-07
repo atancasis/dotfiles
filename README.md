@@ -33,6 +33,7 @@ template has changed, run `chezmoi init` first.
 
 - Right Arrow accepts the whole autosuggestion, not one character.
 - History drops duplicates anywhere, not only consecutive ones.
+- A mistyped command name gets a suggested fix before it runs.
 - Commands that don't exist are never saved to history.
 - History is backed up daily, and the last week of backups is kept.
 - `z` jumps to frequently used directories, with
