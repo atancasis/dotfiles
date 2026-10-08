@@ -44,6 +44,7 @@ jobs:
             extras: ${{ matrix.extras }}
             work: ${{ matrix.work }}
             workEmail: "${{ matrix.workEmail }}"
+            workSigningKey: ""
             personal: ${{ matrix.personal }}
           warnings:
             configFileTemplateHasChanged: false

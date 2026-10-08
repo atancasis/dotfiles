@@ -20,3 +20,6 @@
 {{ if not .workEmail }}
 .config/git/personal
 {{ end }}
+{{ if not .workSigningKey }}
+.config/git/allowed_signers
+{{ end }}

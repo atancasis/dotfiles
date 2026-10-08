@@ -16,6 +16,7 @@
 {{-   $extras = get . "extras" -}}
 {{- end -}}
 {{- $workEmail := get . "workEmail" | default "" -}}
+{{- $workSigningKey := get . "workSigningKey" | default "" -}}
 {{- $work := ne $workEmail "" -}}
 {{- if hasKey . "work" -}}
 {{-   $work = get . "work" -}}
@@ -40,6 +41,14 @@
 {{- else -}}
 {{-   $workEmail = "" -}}
 {{- end -}}
+{{- if $workEmail -}}
+{{-   $workSigningKey = promptString "Work SSH signing key, or none" ($workSigningKey | default "none") -}}
+{{-   if eq $workSigningKey "none" }}{{ $workSigningKey = "" }}{{ end -}}
+{{-   if hasPrefix "~/" $workSigningKey }}{{ $workSigningKey = joinPath .chezmoi.homeDir (trimPrefix "~/" $workSigningKey) }}{{ end -}}
+{{-   $workSigningKey = trimSuffix ".pub" $workSigningKey -}}
+{{- else -}}
+{{-   $workSigningKey = "" -}}
+{{- end -}}
 {{- $personal = promptBool "Install personal apps (media, messaging, VPN)" $personal -}}
 data:
   name: {{ $name | quote }}
@@ -49,4 +58,5 @@ data:
   extras: {{ $extras }}
   work: {{ $work }}
   workEmail: {{ $workEmail | quote }}
+  workSigningKey: {{ $workSigningKey | quote }}
   personal: {{ $personal }}

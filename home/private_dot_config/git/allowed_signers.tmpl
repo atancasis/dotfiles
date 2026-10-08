@@ -1,0 +1,4 @@
+{{ $pub := printf "%s.pub" .workSigningKey -}}
+{{ if stat $pub -}}
+{{ .workEmail }} namespaces="git" {{ include $pub | trim }}
+{{ end -}}

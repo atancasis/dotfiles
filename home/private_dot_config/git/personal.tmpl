@@ -1,3 +1,13 @@
 # Personal identity for repositories on work machines (see ~/.gitconfig).
 [user]
 	email = {{ .email }}
+{{- if .workSigningKey }}
+{{-   if .signingKey }}
+	signingkey = {{ .signingKey }}
+[gpg]
+	format = openpgp
+{{-   else }}
+[commit]
+	gpgsign = false
+{{-   end }}
+{{- end }}

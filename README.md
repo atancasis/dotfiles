@@ -143,6 +143,8 @@ Kubernetes, cloud, Java and VPN tools, installed if you answer yes:
 
 - Git uses the work email, if you give one, everywhere except in this repo,
   which keeps the personal one.
+- Work commits can be signed with an SSH key, while this repo keeps signing
+  with GPG.
 - The AWS, GitHub and GitLab CLIs.
 - Kubernetes tools: kubectl with kubecolor, kind, k9s, sofka, kubectx, stern and
   popeye.
