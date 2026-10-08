@@ -123,7 +123,7 @@ template has changed, run `chezmoi init` first.
 
 Dev tools, containers and desktop apps, installed unless you answer no:
 
-- Containers with colima and Docker.
+- Containers with colima and Docker. New VMs get a reachable address.
 - kitty, with a custom app icon, and WezTerm.
 - Hammerspoon sizes Ghostty's font for each display.
 - Go, Python and Bun through mise, with LazyVim's Go and Python extras.

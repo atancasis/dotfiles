@@ -7,3 +7,5 @@ disk: 20
 vmType: vz
 mountType: virtiofs
 nestedVirtualization: true
+network:
+  address: true
