@@ -154,7 +154,8 @@ Kubernetes, cloud, Java and VPN tools, installed if you answer yes:
 - Ansible, Trivy and sshuttle.
 - Java (Temurin 25) and Maven through mise, with LazyVim's Java extra.
 - pnpm through mise, and Vitest and Playwright tests run from Neovim.
-- pgcli and mycli.
+- pgcli, mycli and kcat.
+- The Restate CLI through mise.
 - 1Password and OpenVPN Connect.
 
 ### Personal apps

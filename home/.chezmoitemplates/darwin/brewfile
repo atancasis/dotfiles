@@ -82,6 +82,7 @@
         "gh"
         "glab"
         "k9s"
+        "kcat"
         "kind"
         "kubecolor"
         "kubectl"
