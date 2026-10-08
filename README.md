@@ -35,6 +35,9 @@ template has changed, run `chezmoi init` first.
 - History drops duplicates anywhere, not only consecutive ones.
 - A mistyped command name gets a suggested fix before it runs.
 - Commands that don't exist are never saved to history.
+- `hist d <pattern>` removes matching commands from history. Start it with a
+  space, or the pattern itself is saved.
+- Undo (Ctrl+/) at an empty prompt takes back the last command for fixing.
 - History is backed up daily, and the last week of backups is kept.
 - `z` jumps to frequently used directories, with
   [zoxide](https://github.com/ajeetdsouza/zoxide).
