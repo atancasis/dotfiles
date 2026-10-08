@@ -142,7 +142,7 @@ Kubernetes, cloud, Java and VPN tools, installed if you answer yes:
 
 - Git uses the work email, if you give one, everywhere except in this repo,
   which keeps the personal one.
-- The GitHub and GitLab CLIs.
+- The AWS, GitHub and GitLab CLIs.
 - Kubernetes tools: kubectl with kubecolor, kind, k9s, sofka, kubectx, stern and
   popeye.
 - k9s starts without its logo or splash screen, uses the Catppuccin Mocha skin,

@@ -78,6 +78,7 @@
       ) -}}
 {{-   $brews = concat $brews (list
         "ansible"
+        "awscli"
         "gh"
         "glab"
         "k9s"
