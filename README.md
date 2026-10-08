@@ -109,8 +109,8 @@ template has changed, run `chezmoi init` first.
 ### Tools
 
 - Homebrew: bat, btop, chezmoi, coreutils, direnv, fd, git, glow, gnupg, ifstat,
-  lazygit, make, mise, Neovim, nmap, pinentry-mac, ripgrep, rsync, sops, telnet,
-  tree, tree-sitter-cli, watch, websocat, wget and zoxide.
+  jq, lazygit, make, mise, Neovim, nmap, pinentry-mac, ripgrep, rsync, sops,
+  telnet, tree, tree-sitter-cli, watch, websocat, wget and zoxide.
 - mise: Node LTS, which LazyVim's language servers need, and Rust and Zig for
   their extras.
 - `make` is GNU Make 4 and `rsync` is rsync 3, in place of macOS's frozen Make
@@ -127,7 +127,7 @@ Dev tools, containers and desktop apps, installed unless you answer no:
 - kitty, with a custom app icon, and WezTerm.
 - Hammerspoon sizes Ghostty's font for each display.
 - Go, Python and Bun through mise, with LazyVim's Go and Python extras.
-- jq, yq, xh, jwt-cli, uv, jj, zellij, ffmpeg and Codex through Homebrew.
+- yq, xh, jwt-cli, uv, jj, zellij, ffmpeg and Codex through Homebrew.
 - Chrome ignores swipe-to-go-back and prints with the macOS dialog.
 - Firefox, OBS, HandBrake, MacWhisper, The Unarchiver, Mouseless and
   Amphetamine.
