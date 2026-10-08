@@ -111,6 +111,7 @@ template has changed, run `chezmoi init` first.
 - Homebrew: bat, btop, chezmoi, coreutils, direnv, fd, git, glow, gnupg, ifstat,
   jq, lazygit, make, mise, Neovim, nmap, pinentry-mac, ripgrep, rsync, sops,
   telnet, tree, tree-sitter-cli, watch, websocat, wget and zoxide.
+- Homebrew deletes its cached downloads whenever it installs or upgrades.
 - mise: Node LTS, which LazyVim's language servers need, and Rust and Zig for
   their extras.
 - `make` is GNU Make 4 and `rsync` is rsync 3, in place of macOS's frozen Make
