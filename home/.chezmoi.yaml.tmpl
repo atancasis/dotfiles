@@ -49,7 +49,7 @@
 {{- else -}}
 {{-   $workSigningKey = "" -}}
 {{- end -}}
-{{- $personal = promptBool "Install personal apps (media, messaging, VPN)" $personal -}}
+{{- $personal = promptBool "Install personal apps (media, messaging, Office, VPN)" $personal -}}
 data:
   name: {{ $name | quote }}
   email: {{ $email | quote }}

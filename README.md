@@ -163,11 +163,12 @@ Kubernetes, cloud, Java and VPN tools, installed if you answer yes:
 
 ### Personal apps
 
-Media, messaging and VPN apps, installed unless you answer no:
+Media, messaging, Office and VPN apps, installed unless you answer no:
 
 - Calibre, Cryptomator, KeePassXC and NordVPN.
 - IINA, Plex Media Server, Spotify and Transmission.
 - Telegram, Viber and WhatsApp.
+- Microsoft Word, Excel and PowerPoint.
 
 ## Credits
 
