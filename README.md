@@ -47,6 +47,9 @@ template has changed, run `chezmoi init` first.
   tool versions.
 - `imgsizes` lists the images below the current directory with their file size
   and pixel dimensions.
+- `sanitize-clipboard` turns curly quotes, hyphen and dash variants, ellipses
+  and special spaces in the clipboard into ASCII, and drops invisible
+  characters. Em dashes stay.
 
 ### Terminal
 
