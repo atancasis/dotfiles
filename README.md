@@ -130,6 +130,8 @@ Dev tools, containers and desktop apps, installed unless you answer no:
 - Containers with colima and Docker. New VMs get a reachable address.
 - kitty, with a custom app icon, and WezTerm.
 - Hammerspoon sizes Ghostty's font for each display.
+- Ctrl+Cmd+V pastes the clipboard converted by `sanitize-clipboard`, but
+  leaves the clipboard itself unchanged.
 - Go, Python and Bun through mise, with LazyVim's Go and Python extras.
 - yq, xh, jwt-cli, uv, jj, zellij, ffmpeg and Codex through Homebrew.
 - Chrome ignores swipe-to-go-back and prints with the macOS dialog.
