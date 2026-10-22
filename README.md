@@ -135,7 +135,8 @@ Dev tools, containers and desktop apps, installed unless you answer no:
 - Chrome ignores swipe-to-go-back and prints with the macOS dialog.
 - Firefox, OBS, HandBrake, MacWhisper, The Unarchiver, Mouseless and
   Amphetamine.
-- Mouseless starts at login.
+- Mouseless and Hammerspoon start at login. Hammerspoon asks for Accessibility
+  access until you grant it.
 - jj uses the same identity as git.
 - In zellij's scroll mode, Alt with an arrow or h/j/k/l moves focus and leaves
   scroll mode.

@@ -1,3 +1,6 @@
+-- Sending keystrokes needs Accessibility access, which only the user can grant.
+hs.accessibilityState(true)
+
 -- Ghostty: auto-adjust font size based on which monitor the window is on
 -- Built-in display: font-size = 10.0 | External display: font-size = 14.0
 --
