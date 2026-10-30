@@ -61,6 +61,13 @@ defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
 ###############################################################################
+# Screen                                                                      #
+###############################################################################
+
+# Added: save screenshots at once, without the floating thumbnail.
+defaults write com.apple.screencapture show-thumbnail -bool false
+
+###############################################################################
 # Finder                                                                      #
 ###############################################################################
 

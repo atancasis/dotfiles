@@ -105,6 +105,7 @@ template has changed, run `chezmoi init` first.
   removed. All are free in the App Store, and stay if you reinstall them.
 - The Dock starts empty, shows no suggested or recent apps, and hides with no
   delay or animation.
+- Screenshots are saved at once, with no floating thumbnail.
 - Finder writes no `.DS_Store` files to network or USB volumes.
 - Finder opens folders in list view.
 - Time Machine doesn't offer new drives as backup disks.
