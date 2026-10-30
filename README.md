@@ -134,7 +134,8 @@ Dev tools, containers and desktop apps, installed unless you answer no:
   leaves the clipboard itself unchanged.
 - Go, Python and Bun through mise, with LazyVim's Go and Python extras.
 - yq, xh, jwt-cli, uv, jj, zellij, ffmpeg and Codex through Homebrew.
-- Chrome ignores swipe-to-go-back and prints with the macOS dialog.
+- Chrome ignores swipe-to-go-back, prints with the macOS dialog, and starts with
+  Memory Saver on.
 - Firefox, OBS, HandBrake, MacWhisper, The Unarchiver, Mouseless and
   Amphetamine.
 - Mouseless and Hammerspoon start at login. Hammerspoon asks for Accessibility

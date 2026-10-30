@@ -118,6 +118,9 @@ defaults write com.google.Chrome AppleEnableMouseSwipeNavigateWithScrolls -bool 
 # Use the system-native print preview dialog
 defaults write com.google.Chrome DisablePrintPreview -bool true
 
+# Turn on Memory Saver, which unloads inactive tabs
+defaults write com.google.Chrome HighEfficiencyModeEnabled -bool true
+
 {{ end -}}
 ###############################################################################
 # Kill affected applications                                                  #
