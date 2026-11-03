@@ -1,0 +1,10 @@
+{{- /* chezmoi:modify-template */ -}}
+{{- /* Docker and colima also write to this file, so set only this key, and
+       leave the file untouched when it is already set. */ -}}
+{{- $config := fromJson (.chezmoi.stdin | default "{}") -}}
+{{- $dirs := list (printf "%s/lib/docker/cli-plugins" (includeTemplate "darwin/brew-prefix" .)) -}}
+{{- if eq (toJson (get $config "cliPluginsExtraDirs")) (toJson $dirs) -}}
+{{-   .chezmoi.stdin -}}
+{{- else -}}
+{{-   setValueAtPath "cliPluginsExtraDirs" $dirs $config | toPrettyJson "\t" -}}
+{{- end -}}

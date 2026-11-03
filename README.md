@@ -129,7 +129,8 @@ template has changed, run `chezmoi init` first.
 
 Dev tools, containers and desktop apps, installed unless you answer no:
 
-- Containers with colima and Docker. New VMs get a reachable address.
+- Containers with colima and Docker, with the Compose and Buildx plugins. New
+  VMs get a reachable address.
 - kitty, with a custom app icon, and WezTerm.
 - Hammerspoon sizes Ghostty's font for each display.
 - Ctrl+Cmd+V pastes the clipboard converted by `sanitize-clipboard`, but
