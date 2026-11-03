@@ -60,6 +60,17 @@ defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
 defaults write NSGlobalDomain KeyRepeat -int 1
 defaults write NSGlobalDomain InitialKeyRepeat -int 10
 
+# Added: turn the keyboard backlight off after 5 seconds of inactivity. macOS
+# keeps this in CoreBrightness, not in defaults, so set it through its private
+# client class.
+osascript -l JavaScript -e '
+$.NSBundle.bundleWithPath("/System/Library/PrivateFrameworks/CoreBrightness.framework").load
+const client = $.NSClassFromString("KeyboardBrightnessClient").alloc.init
+const ids = client.copyKeyboardBacklightIDs
+for (let i = 0; i < ids.count; i++)
+	client.setIdleDimTimeForKeyboard(5, ids.objectAtIndex(i).unsignedLongLongValue)
+' >/dev/null
+
 ###############################################################################
 # Screen                                                                      #
 ###############################################################################

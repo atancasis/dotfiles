@@ -99,6 +99,7 @@ template has changed, run `chezmoi init` first.
 - The menu bar clock shows seconds.
 - Tap to click works on both the built-in and Bluetooth trackpads.
 - Key repeat is faster than System Settings allows, with no accent menu.
+- The keyboard backlight turns off after 5 seconds of inactivity.
 - No auto-capitalisation, smart dashes, smart quotes, double-space periods or
   autocorrect.
 - GarageBand and its sound library, iMovie, Keynote, Numbers and Pages are
